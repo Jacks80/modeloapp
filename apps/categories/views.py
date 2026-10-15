@@ -19,4 +19,11 @@ def add_category(request):
     context['form'] = form
     return render(request, template_name, context)
 
+def list_categories(request):
+    template_name = 'categories/list_categories.html'
+    categories = Category.objects.filter()
+    context = {
+        'categories': categories
+    }
+    return render(request, template_name, context)
 
